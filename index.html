@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -13,17 +13,13 @@ header h1{font-size:2rem;font-weight:700;max-width:800px;}
 header p{font-size:1.1rem;margin-top:1rem;max-width:700px;}
 section{padding:3rem 1rem;max-width:1200px;margin:auto;}
 h2{text-align:center;color:#2e7d32;margin-bottom:2rem;font-size:1.8rem;}
-/* Problems */
 .problems .items{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;}
 .card{background:#f9f9f9;border-radius:8px;padding:1rem;text-align:center;border:1px solid #e0e0e0;}
 .card img{width:50px;height:50px;margin-bottom:1rem;}
-/* Solutions */
 .solutions{background:#f1f8e9;border-radius:8px;}
 .solutions .items{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;}
-/* About */
 .about{background:#fff3e0;border-radius:8px;text-align:center;}
 .about img{margin-top:1rem;width:180px;height:180px;border-radius:50%;object-fit:cover;border:4px solid #2e7d32;}
-/* Contact */
 .contact form{display:flex;flex-direction:column;gap:1rem;max-width:600px;margin:auto;}
 .contact input,.contact textarea{padding:0.8rem;border:1px solid #ccc;border-radius:4px;}
 .contact button{padding:0.9rem;background:#2e7d32;color:#fff;border:none;border-radius:4px;font-size:1rem;cursor:pointer;}
@@ -32,6 +28,8 @@ footer{background:#2e7d32;color:#fff;text-align:center;padding:1rem;margin-top:2
 footer a{color:#fff;text-decoration:none;margin:0 8px;font-weight:600;}
 .chatbot-btn{position:fixed;bottom:20px;right:20px;background:#ff9800;color:#fff;border:none;border-radius:50%;width:60px;height:60px;font-size:26px;cursor:pointer;box-shadow:0 4px 6px rgba(0,0,0,0.3);}
 @media(max-width:600px){header h1{font-size:1.5rem;}}
+
+/* 🌱 Dashboard section */
 .live-dashboard {
   background: #e8f5e9;
   padding: 3rem 1rem;
@@ -76,35 +74,40 @@ footer a{color:#fff;text-decoration:none;margin:0 8px;font-weight:600;}
 <section class="problems">
   <h2>Problems Faced by Farmers</h2>
   <div class="items">
-    <div class="card">
-      <img src="https://img.icons8.com/color/96/000000/tractor.png" alt="">
-      <p>60% of India depends on farming</p>
-    </div>
-    <div class="card">
-      <img src="https://img.icons8.com/color/96/000000/soil.png" alt="">
-      <p>Soil fertility deterioration due to excessive agrochemicals</p>
-    </div>
-    <div class="card">
-      <img src="https://img.icons8.com/color/96/000000/factory.png" alt="">
-      <p>Distant soil testing labs and delayed results</p>
-    </div>
+    <div class="card"><img src="https://img.icons8.com/color/96/000000/tractor.png"><p>60% of India depends on farming</p></div>
+    <div class="card"><img src="https://img.icons8.com/color/96/000000/soil.png"><p>Soil fertility deterioration due to excessive agrochemicals</p></div>
+    <div class="card"><img src="https://img.icons8.com/color/96/000000/factory.png"><p>Distant soil testing labs and delayed results</p></div>
   </div>
 </section>
 
 <section class="solutions">
   <h2>Our Smart AI Solutions</h2>
   <div class="items">
+    <div class="card"><img src="https://img.icons8.com/color/96/000000/artificial-intelligence.png"><p>Soil & water testing with instant AI results</p></div>
+    <div class="card"><img src="https://img.icons8.com/color/96/000000/chat.png"><p>Mobile advisory in local languages</p></div>
+    <div class="card"><img src="https://img.icons8.com/color/96/000000/farmer-male.png"><p>Affordable and easy integration for small farmers</p></div>
+  </div>
+</section>
+
+<!-- 🌱 New Dashboard Section -->
+<section class="live-dashboard">
+  <h2>🌱 Live Farm Readings (Coming Soon)</h2>
+  <div class="dashboard-cards">
     <div class="card">
-      <img src="https://img.icons8.com/color/96/000000/artificial-intelligence.png" alt="">
-      <p>Soil & water testing with instant AI results</p>
+      <h3>Soil pH</h3>
+      <p><span id="soilPh">7.0</span></p>
     </div>
     <div class="card">
-      <img src="https://img.icons8.com/color/96/000000/chat.png" alt="">
-      <p>Mobile advisory in local languages</p>
+      <h3>TDS</h3>
+      <p><span id="tds">450 ppm</span></p>
     </div>
     <div class="card">
-      <img src="https://img.icons8.com/color/96/000000/farmer-male.png" alt="">
-      <p>Affordable and easy integration for small farmers</p>
+      <h3>EC</h3>
+      <p><span id="ec">1.2 mS/cm</span></p>
+    </div>
+    <div class="card">
+      <h3>Moisture</h3>
+      <p><span id="moisture">42%</span></p>
     </div>
   </div>
 </section>
@@ -130,27 +133,7 @@ footer a{color:#fff;text-decoration:none;margin:0 8px;font-weight:600;}
   </p>
 </section>
 
-<section class="live-dashboard">
-  <h2>🌱 Live Farm Readings (Coming Soon)</h2>
-  <div class="dashboard-cards">
-    <div class="card">
-      <h3>Soil pH</h3>
-      <p><span id="soilPh">7.0</span></p>
-    </div>
-    <div class="card">
-      <h3>TDS</h3>
-      <p><span id="tds">450 ppm</span></p>
-    </div>
-    <div class="card">
-      <h3>EC</h3>
-      <p><span id="ec">1.2 mS/cm</span></p>
-    </div>
-    <div class="card">
-      <h3>Moisture</h3>
-      <p><span id="moisture">42%</span></p>
-    </div>
-  </div>
-</section><footer>
+<footer>
   <p>© 2025 AI KrushiMitra Booth</p>
   <p>
     <a href="#">Facebook</a> | <a href="https://wa.me/919999999999">WhatsApp</a> | <a href="#">YouTube</a>
@@ -160,4 +143,3 @@ footer a{color:#fff;text-decoration:none;margin:0 8px;font-weight:600;}
 <button class="chatbot-btn" title="Chat with AI">💬</button>
 </body>
 </html>
-
