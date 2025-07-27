@@ -32,6 +32,39 @@ footer{background:#2e7d32;color:#fff;text-align:center;padding:1rem;margin-top:2
 footer a{color:#fff;text-decoration:none;margin:0 8px;font-weight:600;}
 .chatbot-btn{position:fixed;bottom:20px;right:20px;background:#ff9800;color:#fff;border:none;border-radius:50%;width:60px;height:60px;font-size:26px;cursor:pointer;box-shadow:0 4px 6px rgba(0,0,0,0.3);}
 @media(max-width:600px){header h1{font-size:1.5rem;}}
+.live-dashboard {
+  background: #e8f5e9;
+  padding: 3rem 1rem;
+  margin-top: 2rem;
+  border-radius: 8px;
+}
+.live-dashboard h2 {
+  text-align: center;
+  color: #2e7d32;
+  margin-bottom: 2rem;
+}
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+.dashboard-cards .card {
+  background: #fff;
+  border-radius: 8px;
+  border: 2px solid #c8e6c9;
+  text-align: center;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.dashboard-cards .card h3 {
+  color: #388e3c;
+  margin-bottom: 0.5rem;
+}
+.dashboard-cards .card p {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #555;
+}
 </style>
 </head>
 <body>
