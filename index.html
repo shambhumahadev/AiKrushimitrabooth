@@ -1,195 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI KrushiMitra Booth – एकत्रित स्मार्ट उपाय</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #fff;
-      color: #333;
-    }
-    header {
-      background: linear-gradient(90deg, #2e7d32, #66bb6a);
-      color: #fff;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-    header p {
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
-    }
-    .hero {
-      background: url('https://images.unsplash.com/photo-1600429995721-26f63b793bd1?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
-      height: 300px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      text-align: center;
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-    section {
-      padding: 2rem 1rem;
-      max-width: 1000px;
-      margin: auto;
-    }
-    h2 {
-      color: #2e7d32;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-    .problems ul {
-      list-style: none;
-      padding: 0;
-    }
-    .problems li {
-      margin: 0.5rem 0;
-      padding-left: 2rem;
-      background: url('https://img.icons8.com/color/48/000000/agriculture.png') no-repeat left center;
-      background-size: 24px;
-    }
-    .solutions {
-      background-color: #f1f8e9;
-      border-radius: 8px;
-      padding: 1rem;
-    }
-    .about {
-      background-color: #fff3e0;
-      border-radius: 8px;
-      padding: 1rem;
-      text-align: center;
-    }
-    .about img {
-      max-width: 200px;
-      border-radius: 50%;
-      margin-top: 1rem;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      max-width: 500px;
-      margin: auto;
-    }
-    input, textarea, button {
-      padding: 0.7rem;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    button {
-      background-color: #2e7d32;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #1b5e20;
-    }
-    footer {
-      background-color: #2e7d32;
-      color: #fff;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-    .social-links a {
-      margin: 0 10px;
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    /* Responsive */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.5rem;
-      }
-      .hero {
-        font-size: 1.2rem;
-      }
-    }
-    /* Chatbot floating button */
-    .chatbot-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #ff9800;
-      color: #fff;
-      border: none;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      font-size: 24px;
-      cursor: pointer;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI KrushiMitra Booth – एकत्रित स्मार्ट उपाय</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{color:#333;background:#fff;line-height:1.6;}
+header{background:linear-gradient(rgba(46,125,50,0.8),rgba(46,125,50,0.8)),url('https://images.unsplash.com/photo-1600429995721-26f63b793bd1?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;height:60vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#fff;padding:0 1rem;}
+header h1{font-size:2rem;font-weight:700;max-width:800px;}
+header p{font-size:1.1rem;margin-top:1rem;max-width:700px;}
+section{padding:3rem 1rem;max-width:1200px;margin:auto;}
+h2{text-align:center;color:#2e7d32;margin-bottom:2rem;font-size:1.8rem;}
+/* Problems */
+.problems .items{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;}
+.card{background:#f9f9f9;border-radius:8px;padding:1rem;text-align:center;border:1px solid #e0e0e0;}
+.card img{width:50px;height:50px;margin-bottom:1rem;}
+/* Solutions */
+.solutions{background:#f1f8e9;border-radius:8px;}
+.solutions .items{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;}
+/* About */
+.about{background:#fff3e0;border-radius:8px;text-align:center;}
+.about img{margin-top:1rem;width:180px;height:180px;border-radius:50%;object-fit:cover;border:4px solid #2e7d32;}
+/* Contact */
+.contact form{display:flex;flex-direction:column;gap:1rem;max-width:600px;margin:auto;}
+.contact input,.contact textarea{padding:0.8rem;border:1px solid #ccc;border-radius:4px;}
+.contact button{padding:0.9rem;background:#2e7d32;color:#fff;border:none;border-radius:4px;font-size:1rem;cursor:pointer;}
+.contact button:hover{background:#1b5e20;}
+footer{background:#2e7d32;color:#fff;text-align:center;padding:1rem;margin-top:2rem;}
+footer a{color:#fff;text-decoration:none;margin:0 8px;font-weight:600;}
+.chatbot-btn{position:fixed;bottom:20px;right:20px;background:#ff9800;color:#fff;border:none;border-radius:50%;width:60px;height:60px;font-size:26px;cursor:pointer;box-shadow:0 4px 6px rgba(0,0,0,0.3);}
+@media(max-width:600px){header h1{font-size:1.5rem;}}
+</style>
 </head>
 <body>
-  <header>
-    <h1>AI KrushiMitra Booth – Integrated Smart Solutions for Farmers</h1>
-    <p>Helping farmers improve soil health, access instant testing, and get AI‑powered advisory.</p>
-  </header>
+<header>
+  <h1>AI KrushiMitra Booth – Integrated Smart Solutions for Farmers</h1>
+  <p>Helping farmers improve soil health, access instant testing, and get AI‑powered advisory.</p>
+</header>
 
-  <div class="hero">
-    Empowering Indian Farmers with Technology
-  </div>
-
-  <section class="problems">
-    <h2>Problems Faced by Farmers</h2>
-    <ul>
-      <li>60% of India depends on farming</li>
-      <li>Soil fertility deterioration due to excessive agrochemicals</li>
-      <li>Distant soil testing labs and delayed results</li>
-    </ul>
-  </section>
-
-  <section class="solutions">
-    <h2>Our Smart AI Solutions</h2>
-    <p>✅ Soil &amp; water testing with instant AI results</p>
-    <p>✅ Mobile advisory in local languages</p>
-    <p>✅ Affordable and easy integration for small farmers</p>
-  </section>
-
-  <section class="about">
-    <h2>About Us</h2>
-    <p><strong>Mission:</strong> To empower farmers with AI tools</p>
-    <p><strong>Vision:</strong> Sustainable farming for future generations</p>
-    <img src="https://images.unsplash.com/photo-1521790361444-3f28dfc1e66f?auto=format&fit=crop&w=400&q=80" alt="Team Photo">
-  </section>
-
-  <section class="contact">
-    <h2>Get in Touch</h2>
-    <form>
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="tel" name="phone" placeholder="Your Phone" required>
-      <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-    <p style="text-align:center; margin-top:1rem;">
-      📱 WhatsApp: <a href="https://wa.me/919999999999">+91 99999 99999</a> <br>
-      ✉️ Email: <a href="mailto:info@aikrushimitra.com">info@aikrushimitra.com</a>
-    </p>
-  </section>
-
-  <footer>
-    <p>© 2025 AI KrushiMitra Booth</p>
-    <div class="social-links">
-      <a href="#">Facebook</a> |
-      <a href="https://wa.me/919999999999">WhatsApp</a> |
-      <a href="#">YouTube</a>
+<section class="problems">
+  <h2>Problems Faced by Farmers</h2>
+  <div class="items">
+    <div class="card">
+      <img src="https://img.icons8.com/color/96/000000/tractor.png" alt="">
+      <p>60% of India depends on farming</p>
     </div>
-  </footer>
+    <div class="card">
+      <img src="https://img.icons8.com/color/96/000000/soil.png" alt="">
+      <p>Soil fertility deterioration due to excessive agrochemicals</p>
+    </div>
+    <div class="card">
+      <img src="https://img.icons8.com/color/96/000000/factory.png" alt="">
+      <p>Distant soil testing labs and delayed results</p>
+    </div>
+  </div>
+</section>
 
-  <!-- Floating chatbot button -->
-  <button class="chatbot-btn" title="Chat with AI">💬</button>
+<section class="solutions">
+  <h2>Our Smart AI Solutions</h2>
+  <div class="items">
+    <div class="card">
+      <img src="https://img.icons8.com/color/96/000000/artificial-intelligence.png" alt="">
+      <p>Soil & water testing with instant AI results</p>
+    </div>
+    <div class="card">
+      <img src="https://img.icons8.com/color/96/000000/chat.png" alt="">
+      <p>Mobile advisory in local languages</p>
+    </div>
+    <div class="card">
+      <img src="https://img.icons8.com/color/96/000000/farmer-male.png" alt="">
+      <p>Affordable and easy integration for small farmers</p>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <h2>About Us</h2>
+  <p><strong>Mission:</strong> To empower farmers with AI tools</p>
+  <p><strong>Vision:</strong> Sustainable farming for future generations</p>
+  <img src="https://images.unsplash.com/photo-1521790361444-3f28dfc1e66f?auto=format&fit=crop&w=400&q=80" alt="Team">
+</section>
+
+<section class="contact">
+  <h2>Get in Touch</h2>
+  <form>
+    <input type="text" placeholder="Your Name" required>
+    <input type="tel" placeholder="Your Phone" required>
+    <textarea rows="4" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+  <p style="text-align:center;margin-top:1rem;">
+    📱 WhatsApp: <a href="https://wa.me/919999999999">+91 99999 99999</a><br>
+    ✉️ Email: <a href="mailto:info@aikrushimitra.com">info@aikrushimitra.com</a>
+  </p>
+</section>
+
+<footer>
+  <p>© 2025 AI KrushiMitra Booth</p>
+  <p>
+    <a href="#">Facebook</a> | <a href="https://wa.me/919999999999">WhatsApp</a> | <a href="#">YouTube</a>
+  </p>
+</footer>
+
+<button class="chatbot-btn" title="Chat with AI">💬</button>
 </body>
 </html>
