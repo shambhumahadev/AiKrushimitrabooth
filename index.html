@@ -29,40 +29,18 @@ footer a{color:#fff;text-decoration:none;margin:0 8px;font-weight:600;}
 .chatbot-btn{position:fixed;bottom:20px;right:20px;background:#ff9800;color:#fff;border:none;border-radius:50%;width:60px;height:60px;font-size:26px;cursor:pointer;box-shadow:0 4px 6px rgba(0,0,0,0.3);}
 @media(max-width:600px){header h1{font-size:1.5rem;}}
 
-/* 🌱 Dashboard section */
-.live-dashboard {
-  background: #e8f5e9;
-  padding: 3rem 1rem;
-  margin-top: 2rem;
-  border-radius: 8px;
-}
-.live-dashboard h2 {
-  text-align: center;
-  color: #2e7d32;
-  margin-bottom: 2rem;
-}
-.dashboard-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-}
-.dashboard-cards .card {
-  background: #fff;
-  border-radius: 8px;
-  border: 2px solid #c8e6c9;
-  text-align: center;
-  padding: 1rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-.dashboard-cards .card h3 {
-  color: #388e3c;
-  margin-bottom: 0.5rem;
-}
-.dashboard-cards .card p {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #555;
-}
+/* Dashboard */
+.live-dashboard{background:#e8f5e9;padding:3rem 1rem;margin-top:2rem;border-radius:8px;}
+.live-dashboard h2{text-align:center;color:#2e7d32;margin-bottom:2rem;}
+.dashboard-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;}
+.dashboard-cards .card{background:#fff;border-radius:8px;border:2px solid #c8e6c9;text-align:center;padding:1rem;box-shadow:0 2px 6px rgba(0,0,0,0.1);}
+.dashboard-cards .card h3{color:#388e3c;margin-bottom:0.5rem;}
+.dashboard-cards .card p{font-size:1.4rem;font-weight:bold;color:#555;}
+
+/* Guidance */
+.guidance{background:#fff3e0;margin-top:2rem;border-radius:8px;padding:2rem;text-align:center;}
+.guidance h2{color:#ef6c00;margin-bottom:1rem;}
+.guidance p{font-size:1.2rem;font-weight:600;color:#444;}
 </style>
 </head>
 <body>
@@ -89,27 +67,19 @@ footer a{color:#fff;text-decoration:none;margin:0 8px;font-weight:600;}
   </div>
 </section>
 
-<!-- 🌱 New Dashboard Section -->
 <section class="live-dashboard">
-  <h2>🌱 Live Farm Readings (Coming Soon)</h2>
+  <h2>🌱 Live Farm Readings</h2>
   <div class="dashboard-cards">
-    <div class="card">
-      <h3>Soil pH</h3>
-      <p><span id="soilPh">7.0</span></p>
-    </div>
-    <div class="card">
-      <h3>TDS</h3>
-      <p><span id="tds">450 ppm</span></p>
-    </div>
-    <div class="card">
-      <h3>EC</h3>
-      <p><span id="ec">1.2 mS/cm</span></p>
-    </div>
-    <div class="card">
-      <h3>Moisture</h3>
-      <p><span id="moisture">42%</span></p>
-    </div>
+    <div class="card"><h3>Soil pH</h3><p><span id="soilPh">7.0</span></p></div>
+    <div class="card"><h3>TDS</h3><p><span id="tds">450 ppm</span></p></div>
+    <div class="card"><h3>EC</h3><p><span id="ec">1.2 mS/cm</span></p></div>
+    <div class="card"><h3>Moisture</h3><p><span id="moisture">42%</span></p></div>
   </div>
+</section>
+
+<section class="guidance">
+  <h2>👩‍🌾 Expert Guidance</h2>
+  <p id="guidanceText">Waiting for sensor data...</p>
 </section>
 
 <section class="about">
@@ -141,5 +111,40 @@ footer a{color:#fff;text-decoration:none;margin:0 8px;font-weight:600;}
 </footer>
 
 <button class="chatbot-btn" title="Chat with AI">💬</button>
+
+<script>
+// 🌱 Dummy sensor data (simulate updates)
+function simulateSensorReadings(){
+  let ph = (Math.random()*3 + 5).toFixed(2); // random between 5-8
+  let tds = Math.floor(Math.random()*200 + 300); // 300-500 ppm
+  let ec = (Math.random()*0.5 + 1).toFixed(2); // 1.0-1.5 mS/cm
+  let moisture = Math.floor(Math.random()*30 + 30); // 30-60%
+
+  document.getElementById('soilPh').innerText = ph;
+  document.getElementById('tds').innerText = tds + " ppm";
+  document.getElementById('ec').innerText = ec + " mS/cm";
+  document.getElementById('moisture').innerText = moisture + "%";
+
+  // Guidance logic based on pH
+  let guidance = "";
+  if(ph < 5.5){
+    guidance = "Soil is acidic (pH " + ph + "). Add lime or dolomite to improve soil health.";
+  } else if(ph > 8){
+    guidance = "Soil is alkaline (pH " + ph + "). Add organic matter or gypsum.";
+  } else {
+    guidance = "Soil pH ("+ ph +") is optimal. Continue current practices!";
+  }
+  document.getElementById('guidanceText').innerText = guidance;
+}
+
+// update every 5 seconds
+simulateSensorReadings();
+setInterval(simulateSensorReadings,5000);
+
+// 👉 Later, replace simulateSensorReadings() with real Blynk API calls
+// Example:
+// fetch('https://blynk.cloud/external/api/get?token=YOUR_TOKEN&V1').then(res=>res.text()).then(phValue => { /* update DOM */ });
+</script>
+
 </body>
 </html>
